@@ -230,9 +230,12 @@ class BinaryPSO(DiscreteSwarmOptimizer):
         swarm: pyswarms.backend.swarms.Swarm
             a Swarm class
         """
+        
+        # QUB update from doi: 10.1186/1748-7188-8-15
+        # Random number > sigmoid = 0, else 1
         return (
             np.random.random_sample(size=swarm.dimensions)
-            < self._sigmoid(swarm.velocity)
+            > self._sigmoid(swarm.velocity)
         ) * 1
 
     def _sigmoid(self, x):
