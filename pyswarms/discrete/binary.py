@@ -159,9 +159,6 @@ class BinaryPSO(DiscreteSwarmOptimizer):
             the local best cost and the local best position among the
             swarm.
         """
-        
-        self.iters = iters
-        
         self.rep.log("Obj. func. args: {}".format(kwargs), lvl=logging.DEBUG)
         self.rep.log(
             "Optimize for {} iters with {}".format(iters, self.options),
