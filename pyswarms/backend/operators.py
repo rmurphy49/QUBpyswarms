@@ -79,7 +79,7 @@ def compute_pbest(swarm):
         return (new_pbest_pos, new_pbest_cost)
 
 
-def compute_velocity(swarm, clamp, vh, bounds=None):
+def compute_velocity(swarm, clamp, vh, i, bounds=None):
     """Update the velocity matrix
 
     This method updates the velocity matrix using the best and current
@@ -128,6 +128,7 @@ def compute_velocity(swarm, clamp, vh, bounds=None):
         c1 = swarm.options["c1"]
         c2 = swarm.options["c2"]
         w = swarm.options["w"]
+        iters = swarm.iters
         # QUB UPDATE
         # Modified velocity (speed) adapted from doi: 10.1186/1748-7188-8-15
         # Cognitive distance
@@ -149,8 +150,13 @@ def compute_velocity(swarm, clamp, vh, bounds=None):
             * np.random.uniform(0, 1, swarm_size)
             * (soc_alpha - soc_beta)
         )
+        weight = (
+            ((w - 0.4) * (iters - i))
+            / (iters + 0.4)
+        )
+        
         # Compute temp velocity (subject to clamping if possible)
-        temp_velocity = (w * swarm.velocity) + cognitive + social
+        temp_velocity = (weight * swarm.velocity) + cognitive + social
         updated_velocity = vh(
             temp_velocity, clamp, position=swarm.position, bounds=bounds
         )
