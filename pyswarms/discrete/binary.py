@@ -70,6 +70,7 @@ class BinaryPSO(DiscreteSwarmOptimizer):
         self,
         n_particles,
         dimensions,
+        iters,
         options,
         init_pos=None,
         velocity_clamp=None,
@@ -122,6 +123,7 @@ class BinaryPSO(DiscreteSwarmOptimizer):
         super(BinaryPSO, self).__init__(
             n_particles=n_particles,
             dimensions=dimensions,
+            iters=iters,
             binary=True,
             options=options,
             init_pos=init_pos,
