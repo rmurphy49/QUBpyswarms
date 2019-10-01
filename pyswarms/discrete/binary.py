@@ -206,7 +206,7 @@ class BinaryPSO(DiscreteSwarmOptimizer):
                 break
             # Perform position velocity update
             self.swarm.velocity = self.top.compute_velocity(
-                self.swarm, self.velocity_clamp, self.vh
+                self.swarm, self.velocity_clamp, self.vh, i
             )
             self.swarm.position = self._compute_position(self.swarm)
         # Obtain the final best_cost and the final best_position
