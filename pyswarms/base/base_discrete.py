@@ -44,6 +44,7 @@ class DiscreteSwarmOptimizer(abc.ABC):
         self,
         n_particles,
         dimensions,
+        iters,
         binary,
         options,
         velocity_clamp=None,
@@ -87,6 +88,7 @@ class DiscreteSwarmOptimizer(abc.ABC):
         # Initialize primary swarm attributes
         self.n_particles = n_particles
         self.dimensions = dimensions
+        self.iters = iters
         self.binary = binary
         self.velocity_clamp = velocity_clamp
         self.swarm_size = (n_particles, dimensions)
