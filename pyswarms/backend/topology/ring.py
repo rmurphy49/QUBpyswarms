@@ -94,6 +94,7 @@ class Ring(Topology):
         self,
         swarm,
         curr_iters,
+        iters,
         clamp=None,
         vh=VelocityHandler(strategy="unmodified"),
         bounds=None,
@@ -142,7 +143,7 @@ class Ring(Topology):
         numpy.ndarray
             Updated velocity matrix
         """
-        return ops.compute_velocity(swarm, curr_iters, clamp, vh, bounds)
+        return ops.compute_velocity(swarm, curr_iters, iters, clamp, vh, bounds)
 
     def compute_position(
         self, swarm, bounds=None, bh=BoundaryHandler(strategy="periodic")
