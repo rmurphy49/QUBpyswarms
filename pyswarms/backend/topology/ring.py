@@ -93,9 +93,9 @@ class Ring(Topology):
     def compute_velocity(
         self,
         swarm,
+        curr_iters,
         clamp=None,
         vh=VelocityHandler(strategy="unmodified"),
-        curr_iters,
         bounds=None,
     ):
         """Compute the velocity matrix
