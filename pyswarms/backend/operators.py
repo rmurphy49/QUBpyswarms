@@ -79,7 +79,7 @@ def compute_pbest(swarm):
         return (new_pbest_pos, new_pbest_cost)
 
 
-def compute_velocity(swarm, clamp, vh, curr_iters, bounds=None):
+def compute_velocity(swarm, curr_iters, clamp, vh, bounds=None):
     """Update the velocity matrix
 
     This method updates the velocity matrix using the best and current
