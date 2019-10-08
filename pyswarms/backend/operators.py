@@ -129,6 +129,7 @@ def compute_velocity(swarm, curr_iters, iters, clamp, vh, bounds=None):
         c2 = swarm.options["c2"]
         w = swarm.options["w"]
         iters = iters
+        curr_iters = curr_iters
         # QUB UPDATE
         # Modified velocity (speed) adapted from doi: 10.1186/1748-7188-8-15
         # Cognitive distance
