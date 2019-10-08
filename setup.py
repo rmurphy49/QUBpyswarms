@@ -24,7 +24,7 @@ setup(
     long_description_content_type="text/markdown",
     author="Lester James V. Miranda",
     author_email="ljvmiranda@gmail.com",
-    url="https://github.com/ljvmiranda921/pyswarms",
+    url="https://github.com/rmurphy49/qubpyswarms",
     packages=find_packages(exclude=["docs", "tests"]),
     include_package_data=True,
     install_requires=requirements,
@@ -32,7 +32,7 @@ setup(
     extras_require={"test": dev_requirements},
     license="MIT license",
     zip_safe=False,
-    keywords="pyswarms",
+    keywords="qubpyswarms",
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Intended Audience :: Developers",
